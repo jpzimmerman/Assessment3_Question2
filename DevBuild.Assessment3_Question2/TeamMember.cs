@@ -11,13 +11,10 @@ namespace DevBuild.Assessment3_Question2 {
 
         public TeamMember() { }
 
-        public TeamMember(string firstName, string lastName, uint age, string emailAddress, double salary) :
+        public TeamMember(string firstName, string lastName, uint age, string emailAddress, double salary, string physicalAddress) :
             base(firstName, lastName, age, emailAddress) {
 
-            FirstName = firstName;
-            LastName = lastName;
-            Age = age;
-            EmailAddress = emailAddress;
+            PhysicalAddress = physicalAddress;
             Salary = salary;
         }
 

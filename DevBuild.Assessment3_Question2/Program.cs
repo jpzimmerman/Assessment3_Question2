@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using DevBuild.Utilities;
@@ -11,11 +12,15 @@ namespace DevBuild.Assessment3_Question2 {
         public static List<Person> ourPeeps = new List<Person>() {  new Person("Jim", "Sterling", 38, "jsterling@yahoo.com"),
                                                                     new Person("Kenneth", "Alton", 43, "kenalton@aol.com"),
                                                                     new Person("Jennifer", "Redford", 36, "codingpro82@gmail.com"),
-                                                                    new TeamMember("Satya", "Nadella", 51, "satyasmailbox@hotmail.com", 20000000.00)};
+                                                                    new TeamMember("Satya", "Nadella", 51, "satyasmailbox@hotmail.com", 20000000.00, "One Microsoft Way, Redmond, WA 98052")};
 
     static void Main(string[] args) {
-
-
+            Person person = new Person();
+            PropertyInfo[] personProperties = typeof(Person).GetProperties();
+            personProperties[0].SetValue(person, "Blake");
+            personProperties[1].SetValue(person, "Edwards");
+            personProperties[2].SetValue(person, (uint)15);
+            ourPeeps.Add(person);
 
             Console.Write("***********************************************************\n" +
               "*               Dev.Build(2.0) - My Peeps                 *\n" +

@@ -29,7 +29,7 @@ namespace DevBuild.Assessment3_Question2 {
         }
 
         public override string ToString() {
-            return FirstName.PadRight(15) + LastName.PadRight(15) + Age.ToString().PadRight(6) + EmailAddress.ToString().PadRight(24);
+            return FirstName?.PadRight(15) + LastName?.PadRight(15) + Age.ToString().PadRight(6) + EmailAddress?.ToString().PadRight(24);
         }
     }
 }
